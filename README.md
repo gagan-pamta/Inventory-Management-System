@@ -1,50 +1,44 @@
-Inventory Management Web App
-Overview
+📦 Inventory Management Web App
+🔥 Overview
 
-This project is a fully client-side Inventory Management System built using HTML, CSS, and vanilla JavaScript, following a mobile-first and responsive design.
-It includes CRUD operations, a login system with role-based permissions, dark mode, filters, sorting, and localStorage persistence.
+A fully client-side Inventory Management System built using HTML, CSS, and Vanilla JavaScript.
+Mobile-first, responsive, with a complete login system, CRUD, dark mode, filters, sorting, and role-based access.
 
-Features
-## Authentication (Email + Password)
+🔐 Authentication System
+Email + Password Login
 
-Users can Register with email, password, and a role.
+Users register with email, password, and role.
 
-Users can Sign In using email & password.
+Users can sign in after registration.
 
-Passwords are hashed using SHA-256 (browser SubtleCrypto) before being saved.
+Passwords are hashed using SHA-256 before saving (demo only).
 
-Default admin is auto-created:
-
+Default Admin Account
 Email: admin@example.com
 Password: admin123
 
-
-User session is stored in localStorage.
-
-## Role-Based Access
+Roles & Permissions
 Role	Add	Edit	Archive	Delete	View
 Admin	✔️	✔️	✔️	✔️	✔️
 Manager	✔️	✔️	✔️	❌	✔️
 Viewer	❌	❌	❌	❌	✔️
 
-UI hides or disables buttons depending on user role.
+Buttons automatically hide/disable based on role.
 
-Forbidden actions trigger a 403-style message.
+Forbidden actions show a 403-style warning.
 
-Inventory Management
-## CRUD Operations
+📁 Inventory Management
+CRUD (Create, Read, Update, Delete)
 
-Create new inventory items
+Add new items
 
 Edit existing items
 
-Archive items (removes them from main display)
-
 Delete items (admin only)
 
-Confirm dialogs before destructive actions
+Archive items (hidden from main list)
 
-## Item Fields
+Item Structure
 
 Each item contains:
 
@@ -60,90 +54,93 @@ stockQuantity
 
 reorderThreshold
 
-## Low Stock Indicators
+Low Stock Badge
 
-Items automatically get a Low Stock badge when:
+Displayed automatically when:
 
 stockQuantity <= reorderThreshold
 
-## Search, Filters & Sorting
+🔍 Search, Filters & Sorting
+Powerful Search
 
-Debounced search (name, SKU, description)
+Debounced search across:
 
-Category filters:
+Name
 
-All
+SKU
 
-Archived
+Description
+
+Filters
+
+All Items
+
+Archived Items
 
 Low Stock
 
-Sorting options:
+Sorting Options
 
-Name ↑/↓
+Name (A–Z / Z–A)
 
-Price ↑/↓
+Price (Low–High / High–Low)
 
-Stock ↑/↓
+Stock (Low–High / High–Low)
 
-UI & Experience
-## Responsive Layout
+🎨 UI / UX Features
+Responsive Layout
 
-Mobile → Card layout
+Mobile → Card view
 
 Desktop → Table/grid layout
 
-## Dark Mode
+Dark Mode
 
-Follows system preference by default
+Auto-detects system preference
 
-User selection stored in localStorage
+User choice stored in localStorage
 
-## Accessibility
+Accessibility
 
-Keyboard navigable
+Keyboard-friendly
 
 ESC closes modals
 
-ARIA labels used across UI
+ARIA labels applied
 
-Focus-visible outlines included
+Focus outlines visible
 
-## UX Enhancements
+Extra UI Features
 
-Skeleton loaders on first load
+Skeleton loading screens
 
-Inline validation for price & stock
+Inline form validation
 
-Clean confirmation dialogs
+Clean modal UI
 
-Smooth transitions
+Smooth interactions
 
-Technology Stack
-## Frontend
+🛠️ Technology Stack
+Core Tech
 
 HTML5
 
-CSS3
-
-Grid, Flexbox
-
-CSS Variables
-
-Dark Mode
+CSS3 (Flexbox, Grid, Dark Mode)
 
 JavaScript (Vanilla)
 
-localStorage persistence
+Browser Features Used
 
-SHA-256 hashing
+localStorage
 
-Event delegation
+Event Delegation
 
-Debounce utilities
+SubtleCrypto (SHA-256 hashing)
 
-## Project Structure
+Debounce logic
+
+📂 Project Structure
 inventory-app/
- ├── index.html
- ├── style.css
- └── app.js
+ ├── index.html      # UI layout + login screen + dashboard
+ ├── style.css       # Full design + responsive + dark mode
+ └── app.js          # All logic (auth + CRUD + filters + rendering)
